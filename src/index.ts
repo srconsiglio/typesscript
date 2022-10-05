@@ -1,3 +1,76 @@
+
+
+
+
+
+
+
+
+
+
+//importando express
+import express from 'express'
+import { Server } from 'http'
+
+//usando express
+const server = express()
+
+server.listen (3000)
+server.get('/',(req,res) =>{
+res.send("Por que choras Brad pitt")
+})
+
+
+
+server.get('./',(req,res) => {
+    res.send("olá mundo ")
+})
+
+server.get('/login',(req,res) =>{
+    res.send("Pagina de login")
+})
+
+server.get('/contato',(req,res) =>{
+    res.send("pagina de contato")
+})
+
+server.get('/noticia/:noticia',(req,res) =>{
+    let noticia: string = req.params.noticia
+    res.send("noticias:"+noticia)
+
+})
+
+server.get('/viagens/:origem-:destino',(req,res) =>{
+    let origem: string = req.params.origem
+    let destino: string = req.params.destino
+    res.send(`procurando trajetos de ${origem} até ${destino}`)
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import filmes from './filmes'
 
 
